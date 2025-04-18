@@ -1,9 +1,11 @@
 import './App.css'
-
+import Viewer from './components/viewer'
+import Controller from './components/controller'
 function App() {
   return (
   <>
-  카운터앱 
+      <Viewer></Viewer>
+      <Controller></Controller>
   </>
   )
 }
