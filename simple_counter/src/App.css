@@ -1,0 +1,22 @@
+body{
+  padding: 20px;
+}
+
+.App{
+  /* 오토를 설정하면 화면 중앙에 자동으로 위치하도록 만들어줌 */
+  margin: 0 auto;
+  /* 넓이를 400px 로 설정하여 화면이 늘어져도 넓이는 고정됨*/
+  width: 400px;
+}
+.App > section{
+  /* 배경색 */
+  background-color: rgb(245,245,245);
+  /*  */
+  border : 1px solid rgb(240,240,240);
+  /* 모서리 둥글게 */
+  border-radius: 5px;
+  padding: 20px;
+  /* 밑부분 마진 */
+  margin-bottom: 10px;
+
+}
