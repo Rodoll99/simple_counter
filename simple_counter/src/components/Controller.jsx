@@ -1,6 +1,5 @@
 const Controller = ({onClickButton}) =>{
     return (
-        
     <div>
      <button onClick={() => {
         onClickButton(-1);
@@ -23,5 +22,4 @@ const Controller = ({onClickButton}) =>{
     </div>
     )
 }
-
 export default Controller; 
