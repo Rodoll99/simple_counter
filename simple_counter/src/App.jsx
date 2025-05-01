@@ -1,6 +1,7 @@
 import './App.css'
 import Viewer from './components/viewer'
 import Controller from './components/controller'
+import Even from './components/Even'
 import { useState ,useEffect, useRef } from 'react'
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
   const [count,setCount] = useState(0);
   const [input, setInput] = useState("");
 
-  const isMount = useRef();
+  const isMount = useRef(false);
 
   // useEffect
   // 두번째 인수로 전달한 배열에 의존함. 배열안에 무엇을 넣느냐에따라 결과가 달라지므로
@@ -22,10 +23,17 @@ function App() {
 
   // 2.업데이트 : 변화 , 리렌더링 , deps 제외
   useEffect(()=> {
+    // 업데이트시에만 리렌더링 하고싶다면 isMount 이용
+    if(!isMount.current){
+      isMount.current = true;
+      return;
+    }
     console.log("update")
   })
 
   // 3.언마운트 : 죽음
+
+  
 
 
  
@@ -46,6 +54,7 @@ function App() {
     </section>
     <section> 
       <Viewer count = {count}></Viewer>
+      {count % 2 == 0 ? <Even></Even> : null}
     </section>
     <section>
       <Controller onClickButton={onClickButton}></Controller>
